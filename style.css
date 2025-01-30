@@ -1,6 +1,18 @@
 body {
-	width: 100%;
-	height: 100%;
+	font-family: Arial, sans-serif;
+	font-weight: bolder;
+}
+
+img {
+	min-height: 300px;
+	max-height: 300px;
+	width: auto;
+}
+
+h2 {
+	margin-top: 0;
+	padding-top: 0;
+	text-align: center;
 }
 
 .center {
@@ -10,12 +22,33 @@ body {
 	align-items: center;
 }
 
-.buttons {
+.buttonsContainer {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	gap: 10px;
+}
+
+.button {
+	min-width: 50px;
+	max-width: 150px;
+	height: auto;
+	padding: 15px;
+	background-color: pink;
+	border: 1px solid black;
+	border-radius: 10px;
+	font-weight: bolder;
+	font-family: Arial, sans-serif;
+}
+
+.button:hover {
+	filter: brightness(0.8);
 }
 
 #content {
 	flex-direction: column;
+}
+
+#yesH1 {
+	margin-bottom: 0;
 }

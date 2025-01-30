@@ -8,14 +8,56 @@
 	</head>
 	<body>
 		<div class="center">
-			<img src="cat_placeholder_500x300.png" alt="cat" />
+			<img id="heroImage" src="imgs/bunnyHearts.gif" alt="bunnyHearts" />
 		</div>
 		<div class="center" id="content">
 			<h1>Will you be my valentine?</h1>
-			<div class="buttons">
-				<button id="button">Yes</button>
-				<button id="button">No 🥺</button>
+			<div class="buttonsContainer">
+				<a href="yes.html">
+					<button class="button">Yes</button>
+				</a>
+				<button class="button" id="noButton" onclick="changeText()">
+					No :(
+				</button>
 			</div>
 		</div>
 	</body>
+	<script>
+		const lines = [
+			"Please?",
+			"Are you sure?",
+			"Not even for milk tea?",
+			"What about soup?",
+			"I'll be sad...",
+			"I will die",
+			"I'm not kidding",
+			"I'm going to do it",
+			"This is Kyle's ghost",
+			"I'm going to haunt you",
+			"It's kinda messed up you're still hitting no..",
+			"幾靚唔該",
+			"Okay, that's it",
+		];
+
+		let currLine = 0;
+
+		function changeText() {
+			if (currLine >= lines.length) {
+				document.getElementById("noButton").innerHTML =
+					"This option is no longer available";
+				document.getElementById("noButton").style.backgroundColor = "grey";
+				document.getElementById("noButton").style.color = "white";
+				document.getElementById("noButton").style.cursor = "default";
+				document.getElementById("noButton").style.pointerEvents = "none";
+				return;
+			}
+
+			if (currLine === 8) {
+				document.getElementById("heroImage").src = "imgs/ghostHearts.gif";
+			}
+
+			document.getElementById("noButton").innerHTML = lines[currLine];
+			currLine = currLine + 1;
+		}
+	</script>
 </html>
